@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <title>The Josephus Problem</title>
+</head>
+<body>
+    <header>
+        The Josephus Problem
+    </header>
+
+    <nav> </nav>
+
+    <main>
+        <p>
+            People are standing in a circle waiting to be executed. Counting
+            begins at the first person in the circle, who kills the person by 
+            its right. The procedure is repeated with the remaining peop le, 
+            always skipping the same number of people and in the same direction (to the right).<br>
+              
+            Josephus wants to live, so he need to choose the right place to be.
+            Let's see if we can help him.
+
+        </p>
+        <img src="circle.gif" alt="illustration_josephus_problem">
+
+
+    </main>
+
+    <div>
+        <label for='tseat'>Number of soldiers:</label>
+        <input type='number' id='tseat'>
+        <button onclick='josephus_solving()'>Check</button>
+    </div>
+
+    
+
+    <script>
+        function josephus_solving() {
+            input = document.getElementById('tseat');
+            let tseat = input.value;
+            let wseat = 0;
+            let result = 0;
+            let multiply = 1;
+
+            switch(tseat){
+                case '':
+                    console.log('Type a number');
+                    break;
+
+                case '0':
+                    console.log('Type a number');
+                    break;  
+
+                case '1':
+                    console.log('Just Josephus?');
+                    break;
+                    
+                default:
+                    do {
+                    multiply = multiply * 2;
+                    result = tseat - multiply;
+        
+                    }  while (result >= multiply )  ;
+        
+                    wseat = result * 2 + 1;
+        
+                    console.log('num total de '+tseat+' lugares, o sobrevivente está no lugar '+wseat);
+                
+                    break;
+
+            }            
+                    
+        }
+       
+    
+        </script>
+
+
+    
+</body>
+</html>
