@@ -3,91 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style/main.css">
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;600&display=swap" rel="stylesheet">
     <title>The Josephus Problem</title>
 </head>
 <body>
     <header>
-        The Josephus Problem
+        <div id="title-box">
+            <h1>The Josephus Problem</h1>
+        </div>
     </header>
 
-
-    <main>
-
-        <div class="explanation">
-            <p>
-                People are standing in a circle waiting to be executed. Counting
-                begins at the first person in the circle, who kills the person by 
-                its right. The procedure is repeated with the remaining people, 
-                always skipping the same number of people and in the same direction (to the right).                  
-                Josephus wants to live, so he need to choose the right place to be.
-                Let's see if we can help him.
-    
-            </p>
-            <form>
-                <label for="input-soldier">Number of soldiers: </label>
-                <div>
-                    <input type="number" id="tsoldier" value="12">
-                    <button type='button' onclick="josephusSolving()">Check</button>
-
-
+    <main class="container">
+        <article id="content-box1">
+            <h2>Explanation</h2>
+            <p>People are standing in a circle waiting to be executed. Counting begins at a specified point in the circle and proceeds around the circle in a specified direction. After a specified number of people are skipped, the next person is executed. The procedure is repeated with the remaining people, starting with the next person, going in the same direction and skipping the same number of people, until only one person remains, and is freed.</p>
+        </article>
+        <div id="content-box2">
+            <h2>The Calculator</h2>
+            <p>This is the calculator, you jest need to put the total of people in the circle and it will show you the position you need to stay to survive.</p>
+            <div id="form-content">
+                <form>
+                    <input id="total-people" type="number" step="1" placeholder="" min="2" required>
+                    <button type="submit">Calculate</button>
+                </form>
+                <div id="result-container">
+                    
                 </div>
-            </form>
+            </div>
+            
         </div>
-
-        
-
-
     </main>
 
-    
-
-    
-
-    <script>        
-        function josephusSolving() {
-            input = document.getElementById('tsoldier');
-            let tseat = input.value;
-            let wseat = 0;
-            let result = 0;
-            let multiply = 1;
-
-            if(tseat < 0){
-                console.log('Type a positive number.');
-            }else{
-                switch(tseat){
-                case '': 
-                    console.log('Type a number');
-                    break;
-
-                case '0':
-                    console.log('Any soldiers?');
-                    break;  
-
-                case '1':
-                    console.log('Just Josephus?');
-                    break;
-                    
-                default:
-                    do {
-                    multiply = multiply * 2;
-                    result = tseat - multiply;
-        
-                    }  while (result >= multiply )  ;
-        
-                    wseat = result * 2 + 1;
-        
-                    console.log('with '+tseat+' soldier, Josephus would survive in the position '+wseat);
-                
-                    break;
-                }
-            }                  
-        }     
-    
-    </script>
-
-
-    
+    <script src="./scripts.js"></script>
 </body>
 </html>
