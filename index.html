@@ -18,18 +18,18 @@
     <main class="container">
         <article id="content-box1">
             <h2>Explanation</h2>
-            <p>People are standing in a circle waiting to be executed. Counting begins at a specified point in the circle and proceeds around the circle in a specified direction. After a specified number of people are skipped, the next person is executed. The procedure is repeated with the remaining people, starting with the next person, going in the same direction and skipping the same number of people, until only one person remains, and is freed.</p>
+            <p>People are standing in a circle waiting to be executed. Counting begins at a specified point in the circle and proceeds around the circle in a specified direction. After a specified number of people are skipped, the next person is executed. The procedure is repeated with the remaining people, starting with the next person, going in the same direction and skipping the same number of people, until only one person remains, and is freed. To detailed explanation click <a href="https://en.wikipedia.org/wiki/Josephus_problem" target="_blank">here</a>.</p>
         </article>
         <div id="content-box2">
             <h2>The Calculator</h2>
             <p>This is the calculator, you jest need to put the total of people in the circle and it will show you the position you need to stay to survive.</p>
             <div id="form-content">
                 <form>
-                    <input id="total-people" type="number" step="1" placeholder="" min="2" required>
+                    <input id="total-people" type="number" step="1" placeholder="" min="1" required>
                     <button type="submit">Calculate</button>
                 </form>
                 <div id="result-container">
-                    
+                    <strong id="result"></strong>
                 </div>
             </div>
             

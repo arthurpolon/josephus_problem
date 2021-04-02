@@ -4,21 +4,17 @@ const input = document.getElementById('total-people')
 
 function calculatePosition () {
     const total = Number(input.value)
-    let value = total
-    let result = 0
-    value = Math.sqrt(value)
-    value = Math.trunc(value)
-    result = total - Math.pow(2, value)
+    result = 1;
+    do{
+        result = result*2
+    }while(total >= result)
+    result = total - (result/2)
     result = result*2 + 1
     return result
 }
 
 function renderResult (){
-    resultContainer.innerHTML = ''
-    const result = document.createElement('p')
-    result.innerText = `The surviving position with ${input.value} is ${calculatePosition()}`
-    resultContainer.appendChild(result)
-
+    document.getElementById("result").innerHTML = `The surviving position with ${input.value} people is ${calculatePosition()}`
 }
 
 

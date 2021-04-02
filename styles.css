@@ -82,6 +82,8 @@ main{
     font-size: 1rem;
 }
 
+/* Form & Result =========================================*/
+
 #form-content {
     display: flex;
     align-items: center;
@@ -91,4 +93,20 @@ main{
     margin-left: 70px;
 }
 
+@media (max-width: 500px){
+    #form-content{
+        display: flex;
+        flex-direction: column;
+    }
+
+    #result-container{
+        display: flex;
+        margin-top: 20px;
+        margin-left: 0;
+    }
+
+    #result{
+        text-align: center;
+    }
+}
 
